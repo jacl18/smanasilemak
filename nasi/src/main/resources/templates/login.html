@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link href="css/myStyles.css" rel="stylesheet" type="text/css"/> -->
+    <link href="css/content.css" rel="stylesheet" type="text/css"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <title>Login</title>
+
+    <style>
+       
+       
+     
+    </style>
+
+</head>
+
+<body>
+    <!-- Insert Navbar page below -->
+    <div id="navbar" style="margin-top: 100px"></div>
+
+
+    <!-- Create Login Page and link to the itemforms -->
+
+    <div class="container mt-3">
+        <header>
+            <h2> Login For Adminstrator Only</h2>
+            <p> With Password Validation</p>
+        </header>
+        <br>
+
+        <form onSubmit="event.preventDefault();">
+            <label for="usrname">Username</label>
+            <input type="text" id="usrname" name="usrname" required />
+
+            <label for="psw">Password</label>
+            <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required />
+            <div id="passwordHelpBlock" class="form-text">
+                Your password must contain at least one number and one uppercase and lowercase letter, and at least 8 or
+                more characters
+            </div>
+           
+            <button class="btn btn-primary" onClick="linkItemForm()" value="Submit" >Submit</button>
+        </form>
+
+
+        <div id="message">
+            <h4>Password must contain the following:</h4>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        </div>
+    </div>
+
+    <!-- Insert footer page -->
+    <div id="footer"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+    <script src="/js/login.js"></script>
+
+    <!-- To load the html snippit file below -->
+    <script>
+        $(document).ready(function () {
+            $("#navbar").load("common/navbar.html");
+            $("#footer").load("common/footer.html");
+
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
