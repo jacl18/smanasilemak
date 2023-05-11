@@ -28,9 +28,7 @@
                     <a class="nav-link text-light" th:href="@{dishes01}">Menu</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
-                <button class="btn btn-outline-light" type="submit">Search</button>
+            <form class="d-flex">
 
                 <div sec:authorize="isAuthenticated()">
                     <button class="btn btn-danger ms-2" formaction="/logout" type="submit">Logout</button>
