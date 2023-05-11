@@ -10,7 +10,7 @@ fetch("http://localhost:8080/api/all")
 
 displayDishes = (dishes) => {
     let details = "";
-    details = `<h1 class="text-primary text-center">Dishes List</h1>
+    details = `<h1 class="text-primary text-center">Menu</h1>
     <div class="container-fluid" style="margin-bottom: 70px;">
       <div class="row">`;
     for (let i = 0; i < dishes.length; i++) {

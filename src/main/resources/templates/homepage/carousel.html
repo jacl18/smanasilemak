@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <title>Carousel</title>
     <style>
-.carousel {
-  width: 100%;
-  height: 500px;
+.carousel {width: 100%; height: 700px;}
+
+@media screen and (max-width: 992px)
+{
+    #carouselExample {
+        display: none;
+    }
+}
     </style>
 </head>
 <body>
-<div class="carousel slide" id="carouselExample" style="margin: 75px 0;" th:fragment="carousel">
+<div class="carousel slide" id="carouselExample" style="margin: 60px 0;" th:fragment="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a th:href="@{index}"><img alt="..." class="carousel" src="/images/Carou3.jpg"></a>
+            <a><img alt="..." class="carousel" src="/images/Carou01.jpg" /></a>
         </div>
         <div class="carousel-item">
-            <a th:href="@{itemforms}"><img alt="..." class="carousel" src="/images/carou2.jpg"></a>
+            <a><img alt="..." class="carousel" src="/images/carou2.png" /></a>
         </div>
         <div class="carousel-item">
-            <a th:href="@{dishes01}"> <img alt="..." class="carousel" src="/images/carou1.jpg"></a>
+            <a><img alt="..." class="carousel" src="/images/carou4.jpg" /></a>
         </div>
     </div>
     <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExample" type="button">
