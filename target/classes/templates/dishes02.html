@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Modal</title>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <title>Modal</title>
 </head>
 <style>
   .modal-body {
@@ -12,65 +12,51 @@
   background-repeat: no-repeat;
   background-size: cover;
   }
+
 </style>
 
 <body>
-  <div class="modal fade" id="dishesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="dishesModal" tabindex="-1">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title text-success">
-            <img src="images/logo.jpg" alt="Logo" /> Nasi Lemak Details
-          </h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img id="modalImg" src="" alt="" class="w-100 " />
-          <ul>
-            <li><b>Name: </b><span id="modalName"></span></li>
-            <li>
-              <b>Price: $</b><span id="modalPrice"></span>
-            </li>
-            <li><b>Description: </b><span id="modalDescription"></span></li>
-            <li>
-              <b>Side Dishes: </b><span id="modalSideDishes"></span>
-            </li>
-            <img src="images/hpb.png" alt="" class="img-fluid">
-            <h6>We use healthier oil</h6>
-          </ul>
-        </div>
-        <div class="modal-footer d-flex justify-content-between">
-          <button type="button" id="copy-button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top"
-            data-bs-custom-class="custom-tooltip" data-bs-title="Click Share to copy link to clipboard.">
-            <img src="images/share-fill.svg" alt="Share" /> Share
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-success">
+                    <img alt="Logo" src="images/logo.jpg"/> Nasi Lemak Details
+                </h3>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <img alt="" class="w-100 " id="modalImg" src=""/>
+                <ul>
+                    <li><b>Name: </b><span id="modalName"></span></li>
+                    <li>
+                        <b>Price: $</b><span id="modalPrice"></span>
+                    </li>
+                    <li><b>Description: </b><span id="modalDescription"></span></li>
+                    <li>
+                        <b>Side Dishes: </b><span id="modalSideDishes"></span>
+                    </li>
+                    <img alt="" class="img-fluid" src="images/hpb.png">
+                    <h6>We use healthier oil</h6>
+                </ul>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button class="btn btn-danger" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-bs-title="Click Share to copy link to clipboard."
+                        data-bs-toggle="tooltip"
+                        id="copy-button" type="button">
+                    <img alt="Share" src="images/share-fill.svg"/> Share
+                </button>
 
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-            <img src="images/x-circle-fill.svg" alt="Close" />
-            Close
-          </button>
+                <button class="btn btn-danger" data-bs-dismiss="modal" type="button">
+                    <img alt="Close" src="images/x-circle-fill.svg"/>
+                    Close
+                </button>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script>
-    $(document).ready(function () {
-      $('[data-bs-toggle="tooltip"]').tooltip();
-    });
-    const copyButton = document.getElementById('copy-button');
-
-    copyButton.addEventListener('click', () => {
-      const url = window.location.href;
-
-      navigator.clipboard.writeText(url)
-        .then(() => {
-          console.log(`URL ${url} copied to clipboard`);
-        })
-        .catch((error) => {
-          console.error('Failed to copy URL: ', error);
-        });
-    });
-  </script>
+</div>
+<div th:replace="~{@{share}}"></div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 </body>
 
 </html>
