@@ -9,15 +9,14 @@ fetch("http://localhost:8080/api/all")
             displayDishes(dishes);
         });
 
-
 displayDishes = (dishes) => {
     let details = "";
-    details = `<h1 class="text-primary text-center" style="margin-top: 50px;">Dishes List</h1>
-    <div class="container-fluid" style="margin-bottom: 0px;">
-      <div class="row">`;
+    details = `<h1 class="text-primary text-center" style="margin-top: 50px;">Menu</h1>
+    <div class="container-fluid" style="margin-bottom: 70px;">
+      <div class="row justify-content-around">`;
     for (let i = 0; i < dishes.length; i++) {
         details += `
-          <div class="col-md-4 bg-success-subtle p-5">
+          <div class="col-md-3 bg-success-subtle p-4 m-2">
           <img
             class="w-100 h-50 img-fluid object-fit-cover pt-2"
             alt="[Nasi Lemak image]"
@@ -62,9 +61,17 @@ function selectDish() {
     const index = prompt("Enter the Index of the dish you want to select:");
     selectIndex = index;
 
-    if (index === null || index === "") {
+        // Validate numeric input
+        if (!/^\d+$/.test(index)) {
+        alert("Invalid input. Please enter a numeric index.");
         return;
-    }
+        }
+
+        if (index < 0 || index >= dishes.length) {
+        alert("Invalid index number. Please refer to table below for a valid index.");
+        return;
+        }
+
     document.querySelector("#index").innerHTML = `<p><b>Index: </b>${index}</p>`;
     id = dishes[index].id;
     document.querySelector("#name").value = dishes[index].name;
@@ -97,7 +104,8 @@ function addDish() {
     } else {
         alert("Please fill out all required fields.");
     }
-}
+}// End of addDish
+
 function appendDish(name, description, price, imageUrl, side)
 {
 // FormData is an object provided by the browser API for us to send the data over to the backend
@@ -127,6 +135,8 @@ function appendDish(name, description, price, imageUrl, side)
             alert("Error adding item to Product")
         });
 } // End of function appendDish
+
+
 function updateDish() {
     const form = document.querySelector('#myForm'); // select the form element
     if (form.checkValidity()) {
@@ -156,6 +166,7 @@ function updateDish() {
    formData.append('imageUrl', imageUrl);
    formData.append('side', side);
 
+
   fetch("http://localhost:8080/api/save", {
         method: 'POST',
         body: formData
@@ -179,6 +190,8 @@ function updateDish() {
         alert("Click Select button first to enter Index No");
     }
 } // End of function updateDish
+
+
 function deleteDish() {
     if (selectIndex == null || selectIndex == "") {
     alert("Click Select button and enter [Index No] to delete. Please try again")
@@ -203,7 +216,9 @@ function deleteDish() {
             alert("Error deleting item to Product")
         });
     clearForm();
-}
+}//End of deleteDish
+
+
 function clearForm() {
     displayDatabase(dishes);
     displayDishes(dishes);

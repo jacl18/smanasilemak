@@ -14,19 +14,29 @@
                 data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                 <li class="nav-item">
                     <a aria-current="page" class="nav-link active text-light" th:href="@{index}">Home</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-light" th:href="@{/aboutus}">About Us</a>
                 </li>
 
-
                 <li class="nav-item">
                     <a class="nav-link text-light" th:href="@{dishes01}">Menu</a>
                 </li>
+
+                <!-- Form nav link (visible when authenticated) -->
+                <div sec:authorize="isAuthenticated()">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" th:href="@{/dishes03}">Admin Form</a>
+                    </li>
+                </div>
+
             </ul>
             <form class="d-flex">
 
@@ -37,6 +47,7 @@
                 <div sec:authorize="isAnonymous()">
                     <button class="btn btn-outline-info ms-2" formaction="/login" type="submit">Login</button>
                 </div>
+
             </form>
         </div>
     </div>
