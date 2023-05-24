@@ -1,3 +1,11 @@
+HELP.md
+#target/
+src/test
+target/test-classes/
+target/maven-status/maven-compiler-plugin/testCompile
+!.mvn/wrapper/maven-wrapper.jar
+
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
