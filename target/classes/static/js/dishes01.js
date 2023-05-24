@@ -12,10 +12,10 @@ displayDishes = (dishes) => {
     let details = "";
     details = `<h1 class="text-primary text-center">Menu</h1>
     <div class="container-fluid" style="margin-bottom: 70px;">
-      <div class="row">`;
+      <div class="row justify-content-around">`;
     for (let i = 0; i < dishes.length; i++) {
         details += `
-          <div class="col-md-4 bg-success-subtle p-5">
+          <div class="col-md-3 bg-success-subtle p-4 m-2">
           <img
             class="w-100 h-50 img-fluid object-fit-cover pt-2"
             alt="Nasi Lemak image"
