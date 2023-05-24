@@ -228,7 +228,7 @@ function clearForm() {
 }
 function displayDatabase(dishes) {
     let display = `
-            <table class="table table-striped mb-5" style="border:1px solid #000">  
+            <table class="table table-striped mb-5" style="border:1px solid #000;">
                 <tr>
                     <th>Index</th>
                     <th>Name</th>

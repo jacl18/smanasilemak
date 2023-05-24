@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a274be75-de32-44eb-8169-307e636e4587" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/dishes01.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/dishes01.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/dishes03.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/dishes03.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/dishes03.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/dishes03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/aboutus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homepage/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homepage/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/Chicken_Wing_Set.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/nasifishachar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/nasilobster.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/nasisotong.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/dishes03.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/dishes03.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/homepage/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/homepage/content.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,16 +47,16 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/smawo/Desktop/nasiLemak",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/smawo/Desktop/nasiLemak&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\smawo\Desktop\nasiLemak\productimages" />
