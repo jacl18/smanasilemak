@@ -1,7 +1,12 @@
+//development APIs  - global variables
+//const displayAPI = 'http://localhost:8080/api/all';
+
+//production APIs
+const displayAPI = 'https://smanasilemak.azurewebsites.net/api/all';
 
 let dishes = {};    //Empty Object - Global Scope
 
-fetch("http://localhost:8080/api/all")
+fetch(displayAPI)
         .then(response => response.json())
         .then(info => {
             dishes = info;

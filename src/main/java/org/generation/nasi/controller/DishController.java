@@ -1,5 +1,9 @@
 package org.generation.nasi.controller;
 
+import com.azure.storage.blob.BlobClient;
+import com.azure.storage.blob.BlobContainerClient;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
 import org.generation.nasi.controller.dto.ItemDTO;
 import org.generation.nasi.repository.entity.Dish;
 import org.generation.nasi.service.ItemService;
@@ -26,16 +30,47 @@ public class DishController {
     @CrossOrigin
     @GetMapping("/all")
     public Iterable<Dish> getItems() {
+
         //To display images from local folder
+//        for (Dish image: itemService.all())
+//        {
+//            //productimages/nasi0.jpg
+//        String setURL = imageFolder + "/" + image.getImageUrl();
+//        image.setImageUrl(setURL);
+//        }
+
+
+
+        /* To display images from the Server Container */
+        String connectStr2 = "DefaultEndpointsProtocol=https;AccountName=productimagenasi;AccountKey=E5btTD5tfvsEvF1wS1aDOjyfcZGdPNN+nIhDXEscWDg5k/vYkv0PMDGC5vjK9UI4z0/6UEUsIUL5+ASt5JA1IA==;EndpointSuffix=core.windows.net";
+
+        //System.out.println("Connect String: " + connectStr2);
+        BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(connectStr2).buildClient();
+        String containerName = "prodimage";
+        BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
+
+        //productimagespring
+        BlobClient blobClient = containerClient.getBlobClient(itemService.all().get(0).getImageUrl());
+        System.out.println(blobClient);
+
+
+        //Loop through the ArrayList of itemService.all() and append the Blob url to the imageUrl
         for (Dish image: itemService.all())
         {
-            //productimages/t-shirt1.jpg
-        String setURL = imageFolder + "/" + image.getImageUrl();
-        image.setImageUrl(setURL);
+            //path: productimagenasi/prodimage/nasi0,jpg
+            String setURL = blobClient.getAccountUrl() + "/" + containerName + "/" + image.getImageUrl();
+            image.setImageUrl(setURL);
+            System.out.println(setURL);
+
         }
+        /* End of codes to display images from the Server Container */
+
+
 
         return itemService.all();
     }
+
+
 
     @CrossOrigin
     @PostMapping("/save")
@@ -57,7 +92,7 @@ public class DishController {
                 dish.setPrice(price);
                 dish.setImageUrl(imageUrl);
                 dish.setSide(side);
-                //dish=(itemDto);
+
             itemService.save(dish);
             }
         }

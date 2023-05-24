@@ -1,7 +1,19 @@
+//development APIs  - global variables
+//const addAPI= 'http://localhost:8080/api/add';
+//const displayAPI = 'http://localhost:8080/api/all';
+//const updateAPI = "http://localhost:8080/api/save";
+//const deleteAPI = "http://localhost:8080/api/";
+
+//production APIs
+const addAPI = 'https://smanasilemak.azurewebsites.net/api/add';
+const displayAPI = 'https://smanasilemak.azurewebsites.net/api/all';
+const updateAPI = "http://smanasilemak.azurewebsites.net/api/save";
+const deleteAPI = "http://smanasilemak.azurewebsites.net/api/";
 
 let dishes = {};    //Empty Object - Global Scope
+
 let selectIndex = ""
-fetch("http://localhost:8080/api/all")
+fetch(displayAPI)
         .then(response => response.json())
         .then(info => {
             dishes = info;
@@ -116,7 +128,7 @@ function appendDish(name, description, price, imageUrl, side)
    formData.append('imageUrl', imageUrl);
    formData.append('side', side);
 
-  fetch("http://localhost:8080/api/save", {
+  fetch(updateAPI, {
         method: 'POST',
         body: formData
         })
@@ -167,7 +179,7 @@ function updateDish() {
    formData.append('side', side);
 
 
-  fetch("http://localhost:8080/api/save", {
+  fetch(updateAPI, {
         method: 'POST',
         body: formData
         })
@@ -197,7 +209,7 @@ function deleteDish() {
     alert("Click Select button and enter [Index No] to delete. Please try again")
     //    return;
     }
-  fetch("http://localhost:8080/api/"+id, {
+  fetch(deleteAPI+id, {
         method: 'DELETE',
      //   body: formData
         })
