@@ -25,8 +25,8 @@ displayDishes = (dishes) => {
             class="w-100 h-50 img-fluid object-fit-cover pt-2"
             alt="Nasi Lemak image"
             src="${dishes[i].imageUrl}"
-            }
-          />
+
+          />}
           <h6 class="text-center">
             <b>${dishes[i].name} $${dishes[i].price.toFixed(2)}</b>
           </h6>
